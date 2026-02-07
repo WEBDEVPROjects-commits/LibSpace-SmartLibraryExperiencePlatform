@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Intro from './Intro.jsx'
 function Content() {
   return (
-    <div>
-      
+    <div className='mt-2'>
+      <Intro/>
     </div>
   )
 }

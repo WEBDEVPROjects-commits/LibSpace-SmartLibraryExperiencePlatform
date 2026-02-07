@@ -7,9 +7,9 @@ function Header() {
         <img></img>
       </div>
       <div className="flex gap-6">
-        <a className="p-3">
+        <div className="p-3">
           <Link to="/">Home</Link>
-        </a>
+        </div>
         <a className="p-3">About Us</a>
         <a className="p-3">Contact Us</a>
         <a className="p-3">Memberships</a>
