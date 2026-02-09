@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 function Header() {
   return (
-    <div className="flex text-sm text-zinc-600 justify-around p-3 font-medium">
+    <div className="flex text-sm justify-around p-6 font-medium">
       <div>
         <img></img>
       </div>
@@ -16,8 +16,8 @@ function Header() {
         <a className="p-3"></a>
       </div>
       <div className="flex gap-6">
-        <button className="p-3">SignUp</button>
-        <button className="p-3">Login</button>
+        <button className="p-3"><Link to="/Signup">SignUp</Link></button>
+        <button className="p-3"><Link to="/Login">Login</Link></button>
       </div>
     </div>
   );
