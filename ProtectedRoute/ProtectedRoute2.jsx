@@ -5,7 +5,7 @@ import { useContext } from 'react';
 const ProtectedRoute=() => {
     const props=useContext(HomeContext)
     const token=props.isLoggedIn;
-        return token? <Outlet/>:<Navigate to="/Login"/>;
+        return token? <Outlet/>:<Navigate to="/"/>;
 }
 
 export default ProtectedRoute
