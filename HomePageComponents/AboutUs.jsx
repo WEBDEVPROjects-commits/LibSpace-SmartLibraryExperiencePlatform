@@ -88,6 +88,7 @@ function ContactUs() {
               </svg>
               <div>
                 <p className="text-xs text-gray-500 mb-1">Email</p>
+                
                 <a href="mailto:contact@libspace.com" className="hover:text-emerald-400 transition-colors break-all">
                   contact@libspace.com
                 </a>
