@@ -55,9 +55,7 @@ function App() {
           </Route>
             <Route path="/Signup" element={<Signup/>}></Route>
             <Route element={<ProtectedRoute2/>}>
-            <Route path="/Dashboard" element={<Dashboard/>}>
-              <Route path="/Dashboard/Books" element={<Books/>}></Route>
-            </Route> 
+            <Route path="/Dashboard" element={<Dashboard/>}></Route> 
           </Route>
         </Routes>
       </BrowserRouter>
