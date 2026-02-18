@@ -16,18 +16,27 @@ function App() {
   });
   const [searchedBook, setsearchedBook] = useState("");
   const [api, setApi] = useState([]);
+
   useEffect(() => {
     localStorage.setItem("isLoggedIn", isLoggedIn);
   }, [isLoggedIn]);
 
   const fetches = async (searchedBook) => {
-    const resp = await fetch(
-      `https://openlibrary.org/search.json?q=${searchedBook.replace(" ", "+")}`,
-    );
     // const resp=await fetch('https://openlibrary.org/search.json');
-    const data = await resp.json();
-    console.log(data);
-    setApi(data.docs);
+    try{
+      const resp = await fetch(
+        `https://openlibrary.org/search.jsonq=${searchedBook.replace(" ", "+")}`,
+      );  
+      if(!resp.ok){
+        throw new Error("Failed to fetch books");
+      }
+      const data = await resp.json();
+      console.log(data);
+      setApi(data.docs);
+    }
+    catch(error){
+      console.log(error);
+    }
   };
 
   //  const Contextvalue= useMemo(() => {
