@@ -130,6 +130,7 @@ function Books() {
               onClick={async () => {
                 props.fetches(props.searchedBook);
                 props.setsearchedBook("");
+              
               }}
             >
               Search
@@ -148,7 +149,7 @@ function Books() {
             {props.api.map((element) => {
               const isBorrowable = element.ebook_access === "borrowable";
               return (
-                <div className="bg-white w-48 sm:w-52 rounded-xl border border-gray-100 hover:border-emerald-500 transition-all duration-300 hover:shadow-lg overflow-hidden group">
+                <div className="bg-white w-48 sm:w-52 rounded-xl border border-gray-100 hover:border-emerald-500 transition-all duration-300 hover:shadow-lg overflow-hidden group" key={(element.key).slice(7)}>
                   {/* Book Cover/Placeholder */}
                   <div className="h-40 bg-linear-to-br from-emerald-50 to-emerald-100 flex items-center justify-center relative overflow-hidden">
                     {/* <svg
