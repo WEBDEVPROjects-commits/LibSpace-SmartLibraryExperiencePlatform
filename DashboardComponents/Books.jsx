@@ -73,7 +73,6 @@ function Books() {
                   />
                 </svg>
               </button>
-
               <div
                 id="filterDropdown"
                 className="hidden absolute top-full mt-2 w-full sm:w-64 bg-white rounded-xl shadow-xl border border-gray-100 z-10 overflow-hidden"
@@ -130,7 +129,6 @@ function Books() {
               onClick={async () => {
                 props.fetches(props.searchedBook);
                 props.setsearchedBook("");
-              
               }}
             >
               Search
@@ -143,13 +141,15 @@ function Books() {
         <div className="mt-8">
           <div
             id="searchResults"
-           
             className="bg-white rounded-2xl border border-gray-100 shadow-lg min-h-100 p-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
           >
             {props.api.map((element) => {
               const isBorrowable = element.ebook_access === "borrowable";
               return (
-                <div className="bg-white w-48 sm:w-52 rounded-xl border border-gray-100 hover:border-emerald-500 transition-all duration-300 hover:shadow-lg overflow-hidden group" key={(element.key).slice(7)}>
+                <div
+                  className="bg-white w-48 sm:w-52 rounded-xl border border-gray-100 hover:border-emerald-500 transition-all duration-300 hover:shadow-lg overflow-hidden group"
+                  key={element.key.slice(7)}
+                >
                   {/* Book Cover/Placeholder */}
                   <div className="h-40 bg-linear-to-br from-emerald-50 to-emerald-100 flex items-center justify-center relative overflow-hidden">
                     {/* <svg
@@ -165,7 +165,10 @@ function Books() {
                         d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                       />
                     </svg> */}
-                    <img src={`https://covers.openlibrary.org/b/olid/${element.cover_edition_key}-M.jpg`} className="h-full w-full"/>
+                    <img
+                      src={`https://covers.openlibrary.org/b/olid/${element.cover_edition_key}-M.jpg`}
+                      className="h-full w-full"
+                    />
 
                     {/* Badge */}
                     <div className="absolute top-3 right-3">
@@ -222,7 +225,9 @@ function Books() {
                           d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                         />
                       </svg>
-                      <span className="text-sm truncate">{element.author_name}</span>
+                      <span className="text-sm truncate">
+                        {element.author_name}
+                      </span>
                     </div>
                   </div>
                 </div>
